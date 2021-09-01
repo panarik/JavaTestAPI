@@ -2,8 +2,8 @@ plugins {
     id 'java'
 }
 
-group 'ru.github.panarik.javaTestAPI'
-version '1.0-SNAPSHOT'
+group 'com.github.panarik.javaTestAPI'
+version '0.0.1'
 
 repositories {
     mavenCentral()
@@ -11,6 +11,7 @@ repositories {
 
 dependencies {
     testImplementation 'org.testng:testng:7.4.0'
+    testImplementation 'io.rest-assured:rest-assured:4.4.0'
 }
 
 test {
