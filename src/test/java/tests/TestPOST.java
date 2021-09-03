@@ -1,5 +1,6 @@
 package tests;
 
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.response.ValidatableResponseOptions;
@@ -21,14 +22,14 @@ public class TestPOST {
         String json = JSONParser.parse(user);
 
         ValidatableResponseOptions<ValidatableResponse, Response> response = given()
+                .header("Content-type", "application/json")
+                .contentType(ContentType.JSON)
                 .body(json)
-                .when()
                 .post("https://reqres.in/api/users")
                 .then();
 
         System.out.println(response.log().all());
         response.statusCode(201);
-
 
 
     }

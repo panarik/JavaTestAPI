@@ -1,13 +1,14 @@
 package util;
 
 
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
 
-public class Request {
+public interface Request {
 
-    public static void main(String[] args) {
-
+    static Response get() {
+        return RestAssured.get("https://reqres.in/api/users");
     }
-
 
 
 }
